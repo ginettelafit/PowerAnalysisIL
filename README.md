@@ -2,7 +2,7 @@
 
 ## Shiny app and R package to perform a power analysis to select the number of participants in intensive longitudinal studies
 
-Users can download the app and run locally on their computer by executing the following commands in R or Rstudio.
+Users can download the app and run locally on their computer by executing the following commands in R or Rstudio. 
 
 ```
 library(htmltools)
@@ -28,4 +28,7 @@ devtools::install_github("ginettelafit/PowerAnalysisIL", force = T)
 
 library(PowerAnalysisIL)
 PowerAnalysisIL::RunShiny()
+
+# Using Gist: users can launch this app with:
+shiny::runGist('6bac9d35c2521cc4fd91ce4b82490236')
 ```
