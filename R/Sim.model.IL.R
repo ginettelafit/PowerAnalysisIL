@@ -27,7 +27,6 @@ if (alpha == 0) {stop('The Type I error must be positive')}
 if (length(T) == 0) {stop('Set the number of time points')}
 if (length(sigma) == 0) {stop('Set the value of the standard error of the level-1 residual')}
 if (sigma <= 0) {stop('The variance of the level-1 standard error must be positive')}
-# if (T<20) {stop('The total number of occasions must be equal or larger than 20')}
 
 if (Model==1){
 N.1 = as.numeric(unlist(strsplit(N.1,",")))
@@ -40,7 +39,7 @@ if (abs(rho)>1) {stop('The absolute value of the autocorrelation of the level-1 
 if (length(N.0) == 0) {stop('The number of participants in Group 0 must be positive')}
 if (length(N.1) == 0) {stop('The number of participants in Group 1 must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the level-1 intercept')}
+if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the intercept')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 }
 
@@ -51,7 +50,7 @@ if (length(rho) == 0) {stop('Set the value of the autocorrelation of the level-1
 if (abs(rho)>1) {stop('The absolute value of the autocorrelation of the level-1 residuals must be included in the interval [-1,1]')}
 if (length(N) == 0) {stop('The number of participants must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the level-1 intercept')}
+if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the intercept')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 }
 
@@ -66,8 +65,8 @@ if (length(b10) == 0) {stop('Set the value of the fixed slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the random slope')}
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
-if (length(mu.X) == 0) {stop('Set the value of the mean of the time-varying predictor')}
-if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the time-varying predictor')}
+if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor')}
+if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
 }
 
 if (Model==4){
@@ -79,8 +78,8 @@ if (length(N) == 0) {stop('The number of participants must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
 if (length(b10) == 0) {stop('Set the value of the fixed slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
-if (length(mu.X) == 0) {stop('Set the value of the mean of the time-varying predictor')}
-if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the time-varying predictor')}
+if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor')}
+if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
 }
 
 if (Model==5){
@@ -94,7 +93,7 @@ if (abs(rho)>1) {stop('The absolute value of the autocorrelation of the level-1 
 if (length(N.0) == 0) {stop('The number of participants in Group 0 must be positive')}
 if (length(N.1) == 0) {stop('The number of participants in Group 1 must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the level-1 intercept')}
+if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the intercept')}
 if (length(b10) == 0) {stop('Set the value of the fixed slope')}
 if (length(b11.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the level-1 slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
@@ -102,8 +101,8 @@ if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
 if (length(mu.X0) == 0) {stop('Set the value of the mean of the time-varying predictor in Group 0')}
 if (length(sigma.X0) == 0) {stop('Set the value of the standard deviation of the time-varying predictor in Group 0')}
-if (length(mu.X1) == 0) {stop('Set the value of the mean of the time-varying predictor in Group 1')}
-if (length(sigma.X1) == 0) {stop('Set the value of the standard deviation of the time-varying predictor in Group 1')}
+if (length(mu.X1) == 0) {stop('Set the value of the mean of the level-1 predictor in Group 1')}
+if (length(sigma.X1) == 0) {stop('Set the value of the standard deviation of the level-1 predictor in Group 1')}
 }
 
 if (Model==6){
@@ -117,14 +116,14 @@ if (abs(rho)>1) {stop('The absolute value of the autocorrelation of the level-1 
 if (length(N.0) == 0) {stop('The number of participants in Group 0 must be positive')}
 if (length(N.1) == 0) {stop('The number of participants in Group 1 must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the level-1 intercept')}
+if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the intercept')}
 if (length(b10) == 0) {stop('Set the value of the fixed slope')}
-if (length(b11.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the level-1 slope')}
+if (length(b11.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
-if (length(mu.X0) == 0) {stop('Set the value of the mean of the time-varying predictor in Group 0')}
-if (length(sigma.X0) == 0) {stop('Set the value of the standard deviation of the time-varying predictor in Group 0')}
-if (length(mu.X1) == 0) {stop('Set the value of the mean of the time-varying predictor in Group 1')}
-if (length(sigma.X1) == 0) {stop('Set the value of the standard deviation of the time-varying predictor in Group 1')}
+if (length(mu.X0) == 0) {stop('Set the value of the mean of the level-1 predictor in Group 0')}
+if (length(sigma.X0) == 0) {stop('Set the value of the standard deviation of the level-1 predictor in Group 0')}
+if (length(mu.X1) == 0) {stop('Set the value of the mean of the level-1 predictor in Group 1')}
+if (length(sigma.X1) == 0) {stop('Set the value of the standard deviation of the level-1 predictor in Group 1')}
 }
 
 if (Model==7){
@@ -134,16 +133,16 @@ if (length(rho) == 0) {stop('Set the value of the autocorrelation of the level-1
 if (abs(rho)>1) {stop('The absolute value of the autocorrelation of the level-1 residuals must be included in the interval [-1,1]')}
 if (length(N) == 0) {stop('The number of participants must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the level-1 intercept')}
+if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the intercept')}
 if (length(b10) == 0) {stop('Set the value of fixed slope')}
-if (length(b11.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the level-1 slope')}
+if (length(b11.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the random slope')}
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
-if (length(mu.X) == 0) {stop('Set the value of the mean of the time-varying predictor')}
-if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the time-varying predictor')}
-if (length(mu.W) == 0) {stop('Set the value of the mean of the time-invarying predictor')}
-if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the time-invarying predictor')}
+if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor')}
+if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
+if (length(mu.W) == 0) {stop('Set the value of the mean of the level-2 continuous predictor')}
+if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the level-2 continuous predictor')}
 }
 
 if (Model==8){
@@ -153,14 +152,14 @@ if (length(rho) == 0) {stop('Set the value of the autocorrelation of the level-1
 if (abs(rho)>1) {stop('The absolute value of the autocorrelation of the level-1 residuals must be included in the interval [-1,1]')}
 if (length(N) == 0) {stop('The number of participants must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the level-1 intercept')}
+if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the intercept')}
 if (length(b10) == 0) {stop('Set the value of fixed slope')}
-if (length(b11.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the level-1 slope')}
+if (length(b11.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
-if (length(mu.X) == 0) {stop('Set the value of the mean of the time-varying predictor')}
-if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the time-varying predictor')}
-if (length(mu.W) == 0) {stop('Set the value of the mean of the time-invarying predictor')}
-if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the time-invarying predictor')}
+if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor')}
+if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
+if (length(mu.W) == 0) {stop('Set the value of the mean of the level-2 continuous predictor')}
+if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the level-2 continuous predictor')}
 }
 
 if (Model==9){
@@ -184,9 +183,9 @@ if (abs(length(N.0) - length(N.1)) > 0) {stop('The vector with the number of par
 if (length(N.0) == 0) {stop('The number of participants in Group 0 must be positive')}
 if (length(N.1) == 0) {stop('The number of participants in Group 1 must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the level-1 intercept')}
+if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the intercept')}
 if (length(b10) == 0) {stop('Set the value of the fixed slope')}
-if (length(b11.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the level-1 slope')}
+if (length(b11.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the random slope')}
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
@@ -195,16 +194,16 @@ if (length(rho.v) == 0) {stop('Set the value of the correlation between the rand
 if (Model==11){
 N = as.numeric(unlist(strsplit(N,",")))
 if (length(N) == 1) {stop('The length of the vector with the number of participants must be larger than one')}
-if (length(N) == 0) {stop('The number of participants in Group 0 must be positive')}
+if (length(N) == 0) {stop('The number of participants must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
-if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the level-1 intercept')}
+if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the intercept')}
 if (length(b10) == 0) {stop('Set the value of fixed slope')}
-if (length(b11.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the level-1 slope')}
+if (length(b11.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the random slope')}
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
-if (length(mu.W) == 0) {stop('Set the value of the mean of the time-invarying predictor')}
-if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the time-invarying predictor')}
+if (length(mu.W) == 0) {stop('Set the value of the mean of the level-2 continuous predictor')}
+if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the level-2 continuous predictor')}
 }
 
 cmp.Summary.model.IL = cmpfun(Summary.model.IL)
@@ -427,7 +426,7 @@ coef.names.b01 = rep(0,length(N))
 
 for (i in 1:length(N)){
 coef.names.b00[i] = rep(paste('Fixed intercept','N',N[i]))
-coef.names.b01[i] = rep(paste('Effect of the level-2 continuos variable on the intercept','N',N[i]))
+coef.names.b01[i] = rep(paste('Effect of the level-2 continuous variable on the intercept','N',N[i]))
 }
 
 coef.sim = data.frame(round(rbind(cbind(rep(b00,length(N)),b00.mean,b00.se,b00.bias,CI.b00,power.b00),
@@ -1405,9 +1404,9 @@ coef.names.b11 = rep(0,length(N))
 
 for (i in 1:length(N)){
 coef.names.b00[i] = rep(paste('Fixed intercept','N',N[i]))
-coef.names.b01[i] = rep(paste('Effect of the level-2 dummy variable on the intercept','N',N[i]))
+coef.names.b01[i] = rep(paste('Effect of the level-2 continuous variable on the intercept','N',N[i]))
 coef.names.b10[i] = rep(paste('Fixed slope','N',N[i]))
-coef.names.b11[i] = rep(paste('Effect of the level-2 dummy variable on the slope','N',N[i]))
+coef.names.b11[i] = rep(paste('Effect of the level-2 continuous variable on the slope','N',N[i]))
 }
 
 coef.sim = data.frame(round(rbind(cbind(rep(b00,length(N)),b00.mean,b00.se,b00.bias,CI.b00,power.b00),
@@ -1622,9 +1621,9 @@ coef.names.b11 = rep(0,length(N))
 
 for (i in 1:length(N)){
 coef.names.b00[i] = rep(paste('Fixed intercept','N',N[i]))
-coef.names.b01[i] = rep(paste('Effect of the level-2 dummy variable on the intercept','N',N[i]))
+coef.names.b01[i] = rep(paste('Effect of the level-2 continuous variable on the intercept','N',N[i]))
 coef.names.b10[i] = rep(paste('Fixed slope','N',N[i]))
-coef.names.b11[i] = rep(paste('Effect of the level-2 dummy variable on the slope','N',N[i]))
+coef.names.b11[i] = rep(paste('Effect of the level-2 continuous variable on the slope','N',N[i]))
 }
 
 coef.sim = data.frame(round(rbind(cbind(rep(b00,length(N)),b00.mean,b00.se,b00.bias,CI.b00,power.b00),
@@ -2114,9 +2113,9 @@ coef.names.b11 = rep(0,length(N))
 
 for (i in 1:length(N)){
 coef.names.b00[i] = rep(paste('Fixed intercept','N',N[i]))
-coef.names.b01[i] = rep(paste('Effect of the level-2 dummy variable on the intercept','N',N[i]))
+coef.names.b01[i] = rep(paste('Effect of the level-2 continuous variable on the intercept','N',N[i]))
 coef.names.b10[i] = rep(paste('Fixed slope','N',N[i]))
-coef.names.b11[i] = rep(paste('Effect of the level-2 dummy variable on the slope','N',N[i]))
+coef.names.b11[i] = rep(paste('Effect of the level-2 continuous variable on the slope','N',N[i]))
 }
 
 coef.sim = data.frame(round(rbind(cbind(rep(b00,length(N)),b00.mean,b00.se,b00.bias,CI.b00,power.b00),
