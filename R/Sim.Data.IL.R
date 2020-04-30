@@ -12,6 +12,8 @@ Sim.Data.IL = function(Model,N,N.0, N.1,T,isX.center,Ylag.center,isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1, 
 rho.v, mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1){
 
+library(MASS)
+library(data.table) 
 ########################################################################################
 
 # Simulate data from Model 1: Y ~ b00 + b01*Z
