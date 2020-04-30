@@ -23,7 +23,7 @@ ui <- shinyUI(pageWithSidebar(
 
   # Sidebar with controls to select the outputs to compute power
   sidebarPanel(
-      useShinyjs(),
+      shinyjs::useShinyjs(),
       id = "side-panel",
       withMathJax(),
 
