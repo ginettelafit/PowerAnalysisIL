@@ -63,7 +63,7 @@ Next, we fill in likely values of the model parameters. We start with the fixed 
 
 <img src="Image_3.png" width=500>
 
-### Step 1: Visualize the power curve and inspect app output.
+### Step 2: Visualize the power curve and inspect app output.
 
 The app provides the power curves as a function of the sample sizes indicated above. The next Figure shows the estimated power curve to test the effect of depression on negative affect. 
 
