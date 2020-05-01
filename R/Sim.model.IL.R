@@ -837,7 +837,7 @@ sigma.se = unlist(lapply(1:length(N), function(i) fit[[i]][[1]][[1]][[3]]))
 sigma.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[1]][[1]][[4]]))
 
 sigma.v0.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[2]]))
-sigma.v0.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[3]))
+sigma.v0.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[3]]))
 sigma.v0.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[4]]))
 
 # Table random effects 
