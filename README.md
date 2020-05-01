@@ -33,7 +33,7 @@ PowerAnalysisIL::RunShiny()
 shiny::runGist('6bac9d35c2521cc4fd91ce4b82490236')
 ```
 
-## Screenshot of PowerAnalysisIL a shiny app to perform power analysis to select the number of participants in intensive longitudinal studies
+## Screenshot of PowerAnalysisIL a shiny app 
 
 <img src="Image_1.png">
 
