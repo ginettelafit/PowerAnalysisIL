@@ -33,7 +33,7 @@ PowerAnalysisIL::RunShiny()
 shiny::runGist('6bac9d35c2521cc4fd91ce4b82490236')
 ```
 
-## Screenshot of PowerAnalysisIL a shiny app 
+## Screenshot of the PowerAnalysisIL Shiny app 
 
 <img src="Image_1.png">
 
