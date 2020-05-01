@@ -41,12 +41,15 @@ shiny::runGist('6bac9d35c2521cc4fd91ce4b82490236')
 
 Consider a researcher who is planning an Intensive Longitudinal (IL) study to test the hypothesis that depression (level-2 continuous variable) is positively related to negative affect (Affect).
 
-![](https://latex.codecogs.com/gif.latex?%5Ctext%7BLevel%201%3A%7D%20%5C%3B%20%5Ctext%7BAffect%7D_%7Bit%7D%20%3D%20%5Cgamma_%7B0i%7D%20&plus;%20%5Cepsilon_%7Bit%7D%20%5C%3B%20%5Ctext%7Bfor%7D%20%5C%3B%20i%3D1%2C%5Cldots%2CN%20%5C%3B%20%5Ctext%7Band%7D%20%5C%3B%20t%3D1%2C%5Cldots%2CT)
-![](https://latex.codecogs.com/gif.latex?%5Ctext%7BLevel%202%3A%7D%20%5C%3B%20%5Cgamma_%7B0i%7D%20%3D%20%5Cbeta_%7B00%7D%20&plus;%20%5Cbeta_%7B01%7D%5Ctext%7BDepression%7D_i%20&plus;%20%5Cnu_%7B0i%7D)
+![](http://latex.codecogs.com/svg.latex?%5Ctext%7BLevel%201%3A%7D%20%5C%3B%20%5Ctext%7BAffect%7D_%7Bit%7D%20%3D%20%5Cgamma_%7B0i%7D%20&plus;%20%5Cepsilon_%7Bit%7D%20%5C%3B%20%5Ctext%7Bfor%7D%20%5C%3B%20i%3D1%2C%5Cldots%2CN%20%5C%3B%20%5Ctext%7Band%7D%20%5C%3B%20t%3D1%2C%5Cldots%2CT)
+
+![](http://latex.codecogs.com/svg.latex?%5Ctext%7BLevel%202%3A%7D%20%5C%3B%20%5Cgamma_%7B0i%7D%20%3D%20%5Cbeta_%7B00%7D%20&plus;%20%5Cbeta_%7B01%7D%5Ctext%7BDepression%7D_i%20&plus;%20%5Cnu_%7B0i%7D)
 
 where the level-1 and level-2 errors are mutually independent and normally distributed
-![](https://latex.codecogs.com/gif.latex?%5Cepsilon_%7Bit%7D%20%5Csim%20N%280%2C%5Csigma_%7B%5Cepsilon%7D%5E2%29)
-![](https://latex.codecogs.com/gif.latex?%5Cnu_%7B0i%7D%20%5Csim%20N%280%2C%5Csigma_%7B%5Cnu_0%7D%5E2%29)
+
+![](http://latex.codecogs.com/svg.latex?%5Cepsilon_%7Bit%7D%20%5Csim%20N%280%2C%5Csigma_%7B%5Cepsilon%7D%5E2%29)
+
+![](http://latex.codecogs.com/svg.latex?%5Cnu_%7B0i%7D%20%5Csim%20N%280%2C%5Csigma_%7B%5Cnu_0%7D%5E2%29)
 
 The data will be collected using an IL design, including 70 measurement occasions per individual. How many participants does she need to involve? 
 
