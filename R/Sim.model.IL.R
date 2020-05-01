@@ -616,9 +616,9 @@ sigma.v1.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
 sigma.v1.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
 sigma.v1.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[4]]))
 
-rho.v.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
-rho.v.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
-rho.v.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[4]]))
+rho.v.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[5]][[2]]))
+rho.v.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[5]][[3]]))
+rho.v.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[5]][[4]]))
 
 # Table random effects 
 
@@ -650,17 +650,13 @@ sigma.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[1]][[2]]))
 sigma.se = unlist(lapply(1:length(N), function(i) fit[[i]][[1]][[1]][[3]]))
 sigma.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[1]][[1]][[4]]))
 
-rho.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[2]]))
-rho.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[3]]))
-rho.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[4]]))
+sigma.v0.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[2]]))
+sigma.v0.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[3]]))
+sigma.v0.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[4]]))
 
-sigma.v0.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[2]]))
-sigma.v0.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[3]]))
-sigma.v0.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[4]]))
-
-sigma.v1.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
-sigma.v1.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
-sigma.v1.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[4]]))
+sigma.v1.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[2]]))
+sigma.v1.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[3]]))
+sigma.v1.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[4]]))
 
 rho.v.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
 rho.v.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
@@ -995,13 +991,13 @@ sigma.v0.mean = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[3]][[2]]
 sigma.v0.se = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[3]][[3]]))
 sigma.v0.bias = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[3]][[4]]))
 
-sigma.v1.mean = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[3]][[2]]))
-sigma.v1.se = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[3]][[3]]))
-sigma.v1.bias = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[3]][[4]]))
+sigma.v1.mean = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[4]][[2]]))
+sigma.v1.se = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[4]][[3]]))
+sigma.v1.bias = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[4]][[4]]))
 
-rho.v.mean = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[4]][[2]]))
-rho.v.se = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[4]][[3]]))
-rho.v.bias = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[4]][[4]]))
+rho.v.mean = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[5]][[2]]))
+rho.v.se = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[5]][[3]]))
+rho.v.bias = unlist(lapply(1:length(N.0), function(i) fit[[i]][[2]][[5]][[4]]))
 
 # Table random effects 
 
@@ -1431,13 +1427,13 @@ sigma.v0.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[2]]))
 sigma.v0.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[3]]))
 sigma.v0.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[4]]))
 
-sigma.v1.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[2]]))
-sigma.v1.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[3]]))
-sigma.v1.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[4]]))
+sigma.v1.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
+sigma.v1.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
+sigma.v1.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[4]]))
 
-rho.v.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
-rho.v.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
-rho.v.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[4]]))
+rho.v.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[5]][[2]]))
+rho.v.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[5]][[3]]))
+rho.v.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[5]][[4]]))
 
 # Table random effects 
 
@@ -1806,17 +1802,13 @@ sigma.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[1]][[2]]))
 sigma.se = unlist(lapply(1:length(N), function(i) fit[[i]][[1]][[1]][[3]]))
 sigma.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[1]][[1]][[4]]))
 
-rho.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[2]]))
-rho.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[3]]))
-rho.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[4]]))
+sigma.v0.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[2]]))
+sigma.v0.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[3]]))
+sigma.v0.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[2]][[4]]))
 
-sigma.v0.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[2]]))
-sigma.v0.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[3]]))
-sigma.v0.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[4]]))
-
-sigma.v1.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
-sigma.v1.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
-sigma.v1.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[4]]))
+sigma.v1.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[2]]))
+sigma.v1.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[3]]))
+sigma.v1.bias = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[3]][[4]]))
 
 rho.v.mean = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[2]]))
 rho.v.se = unlist(lapply(1:length(N), function(i) fit[[i]][[2]][[4]][[3]]))
