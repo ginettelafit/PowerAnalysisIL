@@ -35,7 +35,7 @@ shiny::runGist('6bac9d35c2521cc4fd91ce4b82490236')
 
 ## Screenshot of the PowerAnalysisIL Shiny app 
 
-<img src="Image_1.png" width=500>
+<img src="Image_1.png" width=2500>
 
 ## How the app works in a nutshell
 
