@@ -1,6 +1,6 @@
 # PowerAnalysisIL
 
-## Shiny app and R package to perform a power analysis to select the number of participants in intensive longitudinal studies
+## Shiny app and R package to perform power analysis to select the number of participants in intensive longitudinal studies
 
 Users can download the app and run locally on their computer by executing the following commands in R or Rstudio. 
 
