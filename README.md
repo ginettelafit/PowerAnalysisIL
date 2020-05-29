@@ -39,7 +39,18 @@ shiny::runGist('6bac9d35c2521cc4fd91ce4b82490236')
 
 ## How the app works in a nutshell
 
-Consider a researcher who is planning an Intensive Longitudinal (IL) study to test the hypothesis that depression (level-2 continuous variable) is positively related to negative affect (Affect).
+The shiny app focuses on a set of research questions regarding intensive longitudinal data that can be estimated using specific multilevel regression models. These research questions include:
+
+* Group differences in the mean level of the outcome of interest
+* Effect of a level-2 continuous predictor on the mean level of the outcome of interest
+* Effect of a level-1 continuous predictor on the outcome of interest
+* Group differences in the effect of a level-1 continuous predictor on the outcome of interest
+* Cross-level interaction effect between the continuous level-2 predictor and a continuous level-1 predictor
+* Multilevel autoregressive models: mean autoregressive effect
+* Multilevel autoregressive models: group differences in the mean autoregressive effect
+* Multilevel autoregressive models: cross-level interaction effect between a continuous level-2 predictor and the lagged outcome of interest 
+
+To illustrate how the app works we will consider a researcher who is planning an Intensive Longitudinal (IL) study to test the hypothesis that depression (level-2 continuous variable) is positively related to negative affect (Affect).
 
 ![](http://latex.codecogs.com/svg.latex?%5Ctext%7BLevel%201%3A%7D%20%5C%3B%20%5Ctext%7BAffect%7D_%7Bit%7D%20%3D%20%5Cgamma_%7B0i%7D%20&plus;%20%5Cepsilon_%7Bit%7D%20%5C%3B%20%5Ctext%7Bfor%7D%20%5C%3B%20i%3D1%2C%5Cldots%2CN%20%5C%3B%20%5Ctext%7Band%7D%20%5C%3B%20t%3D1%2C%5Cldots%2CT)
 
