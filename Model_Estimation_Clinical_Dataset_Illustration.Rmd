@@ -1,0 +1,291 @@
+---
+title: "Illustrative example: estimation of linear mixed effect models for intensive longitudinal data."
+author: "Ginette Lafit"
+date: ginette.lafit@kuleuven.be
+output: html_document
+bibliography: bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## The dataset 
+
+We use data from @heininga2019dynamical; this study applies the ESM methodology to study emotion dynamics in people with Major Depressive Disorder. The study consist of an ESM testing period of 7 days in which participants had to fill out questions about mood and social context on their daily lives ten times a day (i.e., 70 measurement occasions). The data set contains 38 participants diagnosed with MDD and 40 control subjects. Participants filled out the ESM questionnaires in a stratified random interval scheme between 9:30 AM and 9:30 PM. 
+
+## Example 1: estimate the effect of a time-invariant predictor
+
+In this example, we are going to estimate the effect of depression (i.e., measured at baseline) on momentary negative affect on individuals diagnosed with Major Depressive Disorder (MDD). First, we are going to load the dataset:
+
+```{r}
+rm(list=ls())
+setwd("C:/DATA/3. Power Analysis ESM data/6. Illustrations/0. Clinical data set")
+load(file="Clinical_Dataset.RData")
+names(data)
+```
+The dataset contains the following variables: `PID` that denotes the individual identification number, `day` is a variable that ranges from 1 to 7 and identifies the day of ESM testing, `daybeep` is a variable that ranges from 1 to 10 and identifies the number of the prompt or beep within a day. `PA` is the Positive Affect computed as the mean of items: 'How happy do you feel at the moment?', 'How relaxed do you feel at the moment?' and 'How euphoric do you feel at the moment?'. `NA.` is the Negative Affect computed as the mean of items: 'How depressed do you feel at the moment?', 'How stressed do you feel at the moment?', 'How anxious do you feel at the moment?', 'How angry do you feel at the moment?' and 'How restless do you feel at the moment?'. `anhedonia` corresponds to the ESM item 'To what degree do you find it difficult to experience pleasure in activities at the moment?'. `MDD` is a dummy variable equal to one when the individual has been diagnosed with MDD and 0 otherwise, finally `QIDS` denotes the sum of the items of the Quick Inventory of Depressive Symptomatology (i.e. QIDS) [@rush200316]. QIDS was measured before the ESM testing period.
+
+In the first illustration, we are interested in estimating the effect of depression, measured by QIDS on Negative Affect on individuals with MDD. We use the data of 38 individuals diagnosed with MDD; we select the individuals diagnosed with MDD.  
+
+```{r}
+data.MDD = data[which(data$MDD==1),]
+```
+Before estimating the model, we are going to compute the mean and standard deviation of the level-2 variable `QIDS`.
+
+```{r}
+# Compute the mean of W
+
+groupmean_W = aggregate(data.MDD$QIDS, list(data.MDD$PID), FUN = mean, data=data.MDD, na.rm=TRUE)
+mean_W = mean(groupmean_W[,2])
+mean_W
+
+# Compute the standard deviation of W
+
+sd_W = sd(groupmean_W[,2])
+sd_W
+```
+Next, we are going to mean centered the variable `QIDS` using the mean estimated above:
+
+```{r}
+# Centered QIDS
+
+N.i = unique(data.MDD$PID)
+QIDS.c = rep(0,nrow(data.MDD))
+for(i in N.i){
+QIDS.c[which(data.MDD$PID==i)] = data.MDD$QIDS[which(data.MDD$PID==i)] - mean_W
+}
+
+data.MDD = cbind(data.MDD,QIDS.c)
+```
+
+Next, we are going to specify a linear mixed effect model. We assume that the residuals are serial correlated and follow an AR(1) process. To estimate the model, we use the function `lme` of the R package `nlme`. First, we load the necessary libraries.
+```{r}
+# load required packages for model estimation
+library(nlme)
+
+# Fit model
+fit.Model.1 = lme(NA. ~ 1 + QIDS.c, random = ~1|PID,na.action=na.omit, data=data.MDD,correlation = corAR1())
+```
+The first argument in `lme()` is a formula that defines the structure of the fixed effects   
+```{r, eval=FALSE}
+NA. ~ 1 + QIDS
+```
+where `NA.` is the dependent variable (i.e. negative affect), `1` is the fixed intercept and `QIDS` is the effect of the level-2 continuous variable on the level-1 intercept, that captures the effect of the time-invariant predictor (i.e. QIDS). In this model, the predictor has been centered using the overall mean. The second argument corresponds to the random effect structure of the model
+```{r, eval=FALSE}
+random = ~1|PID
+```
+where `1|PID` corresponds to random intercept, which are allowed to vary over participants (`PID`). 
+
+Given that the data contain missing values we need to indicate that the rows with missing observations will be removed from the analysis (`na.action = na.omit`), the next argument (`data = data.MDD`) indicates the data set that will be used to estimate the model. To indicate that the level-1 residuals follows an AR(1) process, we set (`correlation = corAR1()`). The next argument indicates the procedure that will be used to estimate the model, and we set the method to Restricted Maximum Likelihood (`method = "REML"`). The function `summary()` allows to view the estimation results:
+
+The summary of the estimation results is given by:
+```{r}
+summary(fit.Model.1)
+```
+
+The estimated fixed intercept is given by:
+```{r}
+# Extract fixed effect coefficients
+# extract the value of fixed intercept
+coef(summary(fit.Model.1))[1,1] 
+```
+the effect of the level-2 continuos variable on the intercept are extracted as follows:
+```{r}
+# extract the value of the effect of the level-2 predictor
+coef(summary(fit.Model.1))[2,1] 
+```
+The standard deviation and autocorrelation of the level-1 residuals are extracted as follows: 
+```{r}
+# Extract level-1 residuals standard deviation
+as.numeric(VarCorr(fit.Model.1)[2,2])
+
+# Extract level-1 residuals correlation between consecutive points
+as.numeric(coef(fit.Model.1$modelStruct$corStruct,unconstrained=FALSE))
+```
+The standard deviation of the random intercept is given by:
+```{r}
+# Extract random effect covariance structure
+# Extract the standard deviation of the random intercept
+as.numeric(VarCorr(fit.Model.1)[1,2]) 
+```
+
+## Example 2: estimate the effect of a time-varying predictor
+
+The second illustrative example shows how to estimate the effect of a time-varying predictor on the outcome of interest. Considering the ESM study presented in the previous case, we are interested in studying the impact of Anhedonia on Negative Affect in daily life on patients with major depressive disorder (MDD). 
+
+First, we are going to estimate the individual means, the mean across all participants, and the standard deviation of the variable `anhedonia`.
+
+```{r}
+# Compute the group mean of anhedonia
+groupmean_X = aggregate(data.MDD$anhedonia, list(data.MDD$PID), FUN = mean, data=data.MDD, na.rm=TRUE)
+mean_X = mean(groupmean_X[,2])
+mean_X
+# Compute the standard deviation of anhedonia
+sd_X = sd(data.MDD$anhedonia, na.rm=TRUE)
+sd_X
+```
+
+Next, we are going to person mean-centered the variable `anhedonia`.
+
+```{r}
+#Centered within individuals anhedonia
+N.i = unique(data.MDD$PID)
+anhedonia.c = rep(0,nrow(data.MDD))
+for(i in N.i){
+anhedonia.c[which(data.MDD$PID==i)] = data.MDD$anhedonia[which(data.MDD$PID==i)] - 
+mean(data.MDD$anhedonia[which(data.MDD$PID==i)],na.rm=TRUE)
+}
+
+data.MDD = cbind(data.MDD,anhedonia.c)
+```
+Next, we estimate the linear mixed effect model assuming AR(1) errors:
+```{r}
+# fit a linear mixed-effects model to data 
+fit.Model.2 = lme(NA. ~ 1 + anhedonia.c, random = ~1 + anhedonia.c|PID,na.action=na.omit, data=data.MDD, correlation=corAR1(), method="REML")
+```
+where `NA.` is the dependent variable (i.e. Negative Affect), `1` is the fixed intercept and `anhedonia.c` is the fixed slope  that captures the effect of the predictor (i.e. Anhedonia). In this model, the predictor has been centered for each individual using the individuals' means. The random effect structure of the model (`1 + anhedonia.c|PID`) establishes the random intercept and the random slope, which are allowed to vary over participants (`PID`). 
+
+The summary of the estimation results is given by:
+```{r}
+summary(fit.Model.2)
+```
+
+The estimated fixed intercept is given by:
+```{r}
+# Extract fixed effect coefficients
+# extract the value of fixed intercept
+coef(summary(fit.Model.2))[1,1] 
+```
+
+the effect of the level-2 continuous variable on the intercept is extracted as follows:
+```{r}
+# extract the value of the fixed slope
+coef(summary(fit.Model.2))[2,1] 
+```
+The standard deviation and autocorrelation of the level-1 residuals are extracted as follows: 
+```{r}
+# Extract level-1 residuals standard deviation
+as.numeric(VarCorr(fit.Model.2)[3,2])
+
+# Extract level-1 residuals correlation between consecutive points
+as.numeric(coef(fit.Model.2$modelStruct$corStruct,unconstrained=FALSE))
+```
+The standard deviation of the random intercept is given by:
+```{r}
+# Extract random effect covariance structure
+# Extract the standard deviation of the random intercept
+as.numeric(VarCorr(fit.Model.2)[1,2]) 
+```
+The standard deviation of the random slope is given by:
+```{r}
+# Extract random effect covariance structure
+# Extract the standard deviation of the random slope
+as.numeric(VarCorr(fit.Model.2)[2,2]) 
+```
+The correlation between the random intercept and the random slope is given by:
+```{r}
+# Extract random effect covariance structure
+# Extract the standard deviation of the random slope
+as.numeric(VarCorr(fit.Model.2)[2,3]) 
+```
+
+## Example 3. Estimate group differences in the autoregressive effect in multilevel AR(1) models
+
+In this illustration, we are interested in estimating differences in the autoregressive effect of Negative Affect between participants diagnosed with major depressive disorder (MDD) and control subjects. The dataset contains 38 participants diagnosed with MDD and 40 control subjects. 
+
+First, for each individual, we are going to compute the lagged variable Negative Affect. The variable Negative Affect is lagged within each day.
+
+```{r}
+library(data.table)
+
+# Create a lag variable: the data is lag within a person and days
+
+NA.lag = rep(0,nrow(data))
+subjno.i = unique(data$PID)
+for (i in subjno.i){
+n.i = which(data$PID==i)
+Day.i = data$day[n.i]
+for (t in unique(Day.i)){
+k.i = n.i[which(data$day[n.i]==t)]
+NA.lag[k.i] = shift(data$NA.[k.i],1)
+}}
+
+data = cbind(data,NA.lag)
+```
+
+The lagged variable `NA.lag` will be centered using the individual's mean.
+
+```{r}
+# Centered within individuals PA.lag
+
+N.i = unique(data$PID)
+NA.lag.c = rep(0,nrow(data))
+for(i in N.i){
+NA.lag.c[which(data$PID==i)] = data$NA.lag[which(data$PID==i)] - 
+mean(data$NA.[which(data$PID==i)],na.rm=TRUE)
+}
+
+data = cbind(data,NA.lag.c)
+```
+
+To estimate the model, we use the function `lme` from the `nlme` R package. The dependent variable is the Negative Affect (i.e. NA.), the predictor is the lagged outcome, which is centered using the individuals' mean:
+
+```{r}
+# fit a linear mixed-effects model to data 
+fit.Model.3 = lme(NA. ~ 1 + MDD + NA.lag.c + MDD*NA.lag.c, random = ~1 + NA.lag.c|PID, na.action=na.omit, data=data, method="REML")
+```
+where `NA.` is the negative affect, `1` is the fixed intercept, `MDD` is the difference in the fixed intercept between the two groups, `NA.lag.c` is the fixed autoregressive effect and `MDD*NA.lag.c` is the difference in the fixed autoregressive effect between the two groups. The random effect structure of the model is `1 + NA.lag.c|PID`, where `1` is the random intercept, and `NA.lag.c` is the random slope, which is allowed to vary over participants (`PID`).
+
+The summary of the estimation results is given by:
+```{r}
+summary(fit.Model.3)
+```
+
+We extract the estimated fixed intercept as follows, 
+```{r}
+# Extract fixed effect coefficients
+# extract the value of fixed intercept
+coef(summary(fit.Model.3))[1,1] 
+```
+the differences on the intercept between the two groups is given by:
+```{r}
+# extract the value of the difference in the fixed intercept between the two groups
+coef(summary(fit.Model.3))[2,1] 
+```
+the fixed autorregressive effect is: 
+```{r}
+# extract the value of fixed slope
+coef(summary(fit.Model.3))[3,1] 
+```
+and the difference in the autoregressive effect between the two groups is extracted as follows:
+```{r}
+# extract the value of the difference in the fixed slope between the two groups
+coef(summary(fit.Model.3))[4,1] 
+```
+The standard deviation of the level-1 residuals is extracted as follows: 
+```{r}
+# Extract level-1 residuals standard deviation
+as.numeric(VarCorr(fit.Model.3)[3,2])
+```
+The standard deviation of the random intercept is given by:
+```{r}
+# Extract random effect covariance structure
+# Extract the standard deviation of the random intercept
+as.numeric(VarCorr(fit.Model.3)[1,2]) 
+```
+The standard deviation of the random slope is given by:
+```{r}
+# Extract random effect covariance structure
+# Extract the standard deviation of the random slope
+as.numeric(VarCorr(fit.Model.3)[2,2]) 
+```
+The correlation between the random intercept and the random slope is given by:
+```{r}
+# Extract random effect covariance structure
+# Extract the standard deviation of the random slope
+as.numeric(VarCorr(fit.Model.3)[2,3]) 
+```
+
+## References
+\addcontentsline{toc}{section}{References}
