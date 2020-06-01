@@ -1,10 +1,10 @@
 # PowerAnalysisIL
 
-## Shiny app and R package to perform power analysis to select the number of participants in intensive longitudinal studies
-
 The repository contains functions used in the following [paper](https://psyarxiv.com/dq6ky/):
 
-Lafit, G., Adolf, J., Dejonckheere, E., Myin-Germeys, I., Viechtbauer, W., & Ceulemans, E. (2020, June 1). Selection of the Number of Participants in Intensive Longitudinal Studies: A User-friendly Shiny App and Tutorial to Perform Power Analysis. Retrieved from psyarxiv.com/dq6ky
+Lafit, G., Adolf, J., Dejonckheere, E., Myin-Germeys, I., Viechtbauer, W., & Ceulemans, E. (2020, June 1). Selection of the Number of Participants in Intensive Longitudinal Studies: A User-friendly Shiny App and Tutorial to Perform Power Analysis. 
+
+## Shiny app and R package to perform power analysis to select the number of participants in intensive longitudinal studies
 
 Users can download the app and run locally on their computer by executing the following commands in R or Rstudio. 
 
