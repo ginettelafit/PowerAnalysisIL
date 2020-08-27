@@ -58,11 +58,11 @@ To illustrate how the app works we will consider a researcher who is planning an
 
 ![](http://latex.codecogs.com/svg.latex?%5Ctext%7BLevel%202%3A%7D%20%5C%3B%20%5Cgamma_%7B0i%7D%20%3D%20%5Cbeta_%7B00%7D%20&plus;%20%5Cbeta_%7B01%7D%5Ctext%7BDepression%7D_i%20&plus;%20%5Cnu_%7B0i%7D)
 
-where the level-1 and level-2 errors are mutually independent and normally distributed
+where the level-1 and level-2 errors are mutually independent 
 
-![](http://latex.codecogs.com/svg.latex?%5Cepsilon_%7Bit%7D%20%5Csim%20N%280%2C%5Csigma_%7B%5Cepsilon%7D%5E2%29)
+AR(1) level-1 errors ![](http://latex.codecogs.com/svg.latex?%5Cepsilon_%7Bit%7D) with autocorrelation ![](http://latex.codecogs.com/svg.latex?%5Crho_%7B%5Cepsilon%7D) and variance ![](http://latex.codecogs.com/svg.latex?%5Csigma_%7B%5Cepsilon%7D%5E2)
 
-![](http://latex.codecogs.com/svg.latex?%5Cnu_%7B0i%7D%20%5Csim%20N%280%2C%5Csigma_%7B%5Cnu_0%7D%5E2%29)
+the level-2 errors are normally distributed: ![](http://latex.codecogs.com/svg.latex?%5Cnu_%7B0i%7D%20%5Csim%20N%280%2C%5Csigma_%7B%5Cnu_0%7D%5E2%29)
 
 The data will be collected using an IL design, including 70 measurement occasions per individual. How many participants does she need to involve? 
 
