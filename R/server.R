@@ -1104,7 +1104,7 @@ server <- shinyServer(function(input, output){
    })
 
     observeEvent(input$reset_button, {
-      shinyjs::reset("side-panel")
+      reset("side-panel")
     })
 
 })
