@@ -1102,6 +1102,10 @@ server <- shinyServer(function(input, output){
      }
 
    })
+  
+    output$img <- renderUI({
+      tags$img(src = "https://drive.google.com/file/d/17I4XAGNyF7QvlNx2gf0hFHTZfmOGPZjX/view?usp=sharing")
+  })
 
     observeEvent(input$reset_button, {
       reset("side-panel")
