@@ -31,8 +31,6 @@ devtools::install_github("ginettelafit/PowerAnalysisIL", force = T)
 library(PowerAnalysisIL)
 PowerAnalysisIL::RunShiny()
 
-# Using Gist: users can launch this app with:
-shiny::runGist('6bac9d35c2521cc4fd91ce4b82490236')
 ```
 
 ## Screenshot of the PowerAnalysisIL Shiny app 
