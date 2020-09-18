@@ -22,8 +22,9 @@ alpha,R,Opt.Method){
 
 # Check parameters & and output messages
 
-if (length(alpha) == 0) {stop('The Type I error must be positive')}
-if (alpha == 0) {stop('The Type I error must be positive')}
+if (length(alpha) == 0) {stop('The Type I error must be between 0 and 1')}
+if (sigma > 1) {stop('The Type I error must be between 0 and 1')}
+if (alpha == 0) {stop('The Type I error must be between 0 and 1')}
 if (length(T) == 0) {stop('Set the number of time points')}
 if (length(sigma) == 0) {stop('Set the value of the standard error of the level-1 residual')}
 if (sigma <= 0) {stop('The variance of the level-1 standard error must be positive')}
@@ -41,6 +42,7 @@ if (length(N.1) == 0) {stop('The number of participants in Group 1 must be posit
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
 if (length(b01.Z) == 0) {stop('Set the value of the effect of the level-2 dummy variable on the intercept')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
 }
 
 if (Model==2){
@@ -52,6 +54,7 @@ if (length(N) == 0) {stop('The number of participants must be positive')}
 if (length(b00) == 0) {stop('Set the value of the fixed intercept')}
 if (length(b01.W) == 0) {stop('Set the value of the effect of the level-2 continuous variable on the intercept')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}  
 }
 
 if (Model==3){
@@ -67,6 +70,9 @@ if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
 if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor')}
 if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
+if (sigma.v1 < 0) {stop('The standard deviation of the random slope must be positive')}
+  
 }
 
 if (Model==4){
@@ -80,6 +86,7 @@ if (length(b10) == 0) {stop('Set the value of the fixed slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor')}
 if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
 }
 
 if (Model==5){
@@ -103,6 +110,8 @@ if (length(mu.X0) == 0) {stop('Set the value of the mean of the time-varying pre
 if (length(sigma.X0) == 0) {stop('Set the value of the standard deviation of the time-varying predictor in Group 0')}
 if (length(mu.X1) == 0) {stop('Set the value of the mean of the level-1 predictor in Group 1')}
 if (length(sigma.X1) == 0) {stop('Set the value of the standard deviation of the level-1 predictor in Group 1')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
+if (sigma.v1 < 0) {stop('The standard deviation of the random slope must be positive')}  
 }
 
 if (Model==6){
@@ -124,6 +133,7 @@ if (length(mu.X0) == 0) {stop('Set the value of the mean of the level-1 predicto
 if (length(sigma.X0) == 0) {stop('Set the value of the standard deviation of the level-1 predictor in Group 0')}
 if (length(mu.X1) == 0) {stop('Set the value of the mean of the level-1 predictor in Group 1')}
 if (length(sigma.X1) == 0) {stop('Set the value of the standard deviation of the level-1 predictor in Group 1')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
 }
 
 if (Model==7){
@@ -143,6 +153,8 @@ if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor
 if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
 if (length(mu.W) == 0) {stop('Set the value of the mean of the level-2 continuous predictor')}
 if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the level-2 continuous predictor')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
+if (sigma.v1 < 0) {stop('The standard deviation of the random slope must be positive')}    
 }
 
 if (Model==8){
@@ -160,6 +172,7 @@ if (length(mu.X) == 0) {stop('Set the value of the mean of the level-1 predictor
 if (length(sigma.X) == 0) {stop('Set the value of the standard deviation of the level-1 predictor')}
 if (length(mu.W) == 0) {stop('Set the value of the mean of the level-2 continuous predictor')}
 if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the level-2 continuous predictor')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')} 
 }
 
 if (Model==9){
@@ -172,6 +185,8 @@ if (length(b10) == 0) {stop('Set the value of fixed slope')}
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the random slope')}
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
+if (sigma.v1 < 0) {stop('The standard deviation of the random slope must be positive')}  
 }
 
 if (Model==10){
@@ -189,6 +204,8 @@ if (length(b11.Z) == 0) {stop('Set the value of the effect of the level-2 dummy 
 if (length(sigma.v0) == 0) {stop('Set the value of the standard deviation of the random intercept')}
 if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the random slope')}
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
+if (sigma.v1 < 0) {stop('The standard deviation of the random slope must be positive')}  
 }
 
 if (Model==11){
@@ -204,6 +221,8 @@ if (length(sigma.v1) == 0) {stop('Set the value of the standard deviation of the
 if (length(rho.v) == 0) {stop('Set the value of the correlation between the random intercept and the random intercept')}
 if (length(mu.W) == 0) {stop('Set the value of the mean of the level-2 continuous predictor')}
 if (length(sigma.W) == 0) {stop('Set the value of the standard deviation of the level-2 continuous predictor')}
+if (sigma.v0 < 0) {stop('The standard deviation of the random intercept must be positive')}
+if (sigma.v1 < 0) {stop('The standard deviation of the random slope must be positive')}  
 }
 
 cmp.Summary.model.IL = cmpfun(Summary.model.IL)
