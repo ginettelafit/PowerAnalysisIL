@@ -34,7 +34,7 @@ server <- shinyServer(function(input, output){
   })
   
   observeEvent(input$reset_button, {
-      reset("side-panel")
+      shinyjs::reset("side-panel")
     })
 
    output$powerplot <-renderPlot({
