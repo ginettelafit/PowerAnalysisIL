@@ -9,6 +9,13 @@ Lafit, G., Adolf, J., Dejonckheere, E., Myin-Germeys, I., Viechtbauer, W., & Ceu
 Users can download the app and run locally on their computer by executing the following commands in R or Rstudio. 
 
 ```
+# Check if R packages are installed
+
+list.of.packages = c("htmltools","shiny","htmltools","shiny","DT","nlme","ggplot2","gridExtra",
+"data.table","plyr","dplyr","formattable","tidyr","MASS","shinyjs","compiler","future.apply")
+new.packages = list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
 library(htmltools)
 library(shiny)
 library(DT)
