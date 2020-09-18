@@ -257,11 +257,9 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
   mainPanel(
     tabsetPanel(
         
-      tabPanel("Population Models",
-      htmlOutput("img")
-      ),   
-
-      tabPanel("Power Analysis", 
+      tabPanel("Power Analysis",
+      tags$h4("Population Models"),
+      htmlOutput("img"),         
       tags$h4("Power Analysis"),
       plotOutput("powerplot",height = "1000px")), 
 
