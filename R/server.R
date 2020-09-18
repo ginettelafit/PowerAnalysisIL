@@ -1103,7 +1103,7 @@ server <- shinyServer(function(input, output){
 
    })
   
- output$img =
+ output$img <-
     renderText({
       c(
         '<img src="',
