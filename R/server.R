@@ -281,7 +281,7 @@ server <- shinyServer(function(input, output){
      Power=power.IL.b11$power.b11)
      Power.b11 = ggplot(data = data.IL.b11, aes(x=Participants, y=Power, group=1)) + 
      geom_line(size=1) + geom_point() + scale_x_discrete(limits=data.IL.b11$Participants) +
-     labs(title = "Power curve for the fffect of the level-2 dummy variable on the slope")
+     labs(title = "Power curve for the effect of the level-2 dummy variable on the slope")
 
      coef.plot = grid.arrange(Power.b00,Power.b01,Power.b10,Power.b11,ncol=1)
      }
