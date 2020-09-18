@@ -1107,7 +1107,7 @@ server <- shinyServer(function(input, output){
     renderText({
       c(
         '<img src="',
-        "https://drive.google.com/drive/folders/15OtYe11v37Nt7LjYBLabUNY0iYh1I_W7",
+        "https://lh3.googleusercontent.com/pw/ACtC-3f75Hgk1v-0iytFCN3RYRqvmDrnNp0mQpozel40gUSzjdhbVsxb2aiTCNoQzr9A5x_NvCUBn4yu9kmeAZG0lAjj33K3NJa46uW6gdGtMknE19TZJbEW4vA6YJhjA8UX_YK6UZFG79YxHbzI7ta3nNYuag=w1804-h969-no?authuser=0",
         '">'
       )
     }) 
