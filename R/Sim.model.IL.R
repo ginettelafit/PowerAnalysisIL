@@ -23,7 +23,7 @@ alpha,R,Opt.Method){
 # Check parameters & and output messages
 
 if (length(alpha) == 0) {stop('The Type I error must be between 0 and 1')}
-if (sigma > 1) {stop('The Type I error must be between 0 and 1')}
+if (alpha > 1) {stop('The Type I error must be between 0 and 1')}
 if (alpha == 0) {stop('The Type I error must be between 0 and 1')}
 if (length(T) == 0) {stop('Set the number of time points')}
 if (length(sigma) == 0) {stop('Set the value of the standard error of the level-1 residual')}
