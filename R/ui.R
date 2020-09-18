@@ -256,6 +256,9 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
 
   mainPanel(
     tabsetPanel(
+        
+      tabPanel("Population Models"
+      ),   
 
       tabPanel("Power Analysis", 
       tags$h4("Power Analysis"),
