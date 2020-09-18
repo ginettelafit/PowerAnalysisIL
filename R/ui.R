@@ -6,7 +6,7 @@ ui <- shinyUI(pageWithSidebar(
   # Sidebar with controls to select the outputs to compute power
   sidebarPanel(
       shinyjs::useShinyjs(debug = TRUE),
-      id = "side-panel",
+      div(id = "side-panel"),
       withMathJax(),
 
   # Input: Selector for choosing model ----
