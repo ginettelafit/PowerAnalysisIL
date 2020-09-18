@@ -183,12 +183,12 @@ condition = "input.Model == '1' || input.Model == '2' || input.Model == '3' || i
     numericInput("rho", "Autocorrelation of level-1 errors: \\( \\rho_\\epsilon \\)", NULL)
 ),
 
-    numericInput("sigma.v0", "Standard deviation of random intercept: \\( \\sigma_{\\nu_0}^2 \\)", NULL),
+    numericInput("sigma.v0", "Standard deviation of random intercept: \\( \\sigma_{\\nu_0} \\)", NULL),
 
 conditionalPanel(
 condition = "input.Model == '3' || input.Model == '5' || input.Model == '7' || input.Model == '9' || input.Model == '10'
     || input.Model == '11'",
-    numericInput("sigma.v1", "Standard deviation of random slope: \\(  \\sigma_{\\nu_1}^2 \\)", NULL), 
+    numericInput("sigma.v1", "Standard deviation of random slope: \\(  \\sigma_{\\nu_1} \\)", NULL), 
     numericInput("rho.v", "Correlation between the random intercept and random slope: \\( \\rho_{\\nu_{01}} \\)", NULL)
 ),
 
@@ -245,6 +245,7 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
              "To switch models and set new parameters click the Reset Page button."),
 
     helpText("Contact: ginette.lafit@kuleuven.be")
+    helpText("Citation: Lafit, G., Adolf, J., Dejonckheere, E., Myin-Germeys, I., Viechtbauer, W., & Ceulemans, E. (2020, June 1). Selection of the Number of Participants in Intensive Longitudinal Studies: A User-friendly Shiny App and Tutorial to Perform Power Analysis in Multilevel Regression Models that Account for Temporal Dependencies. https://doi.org/10.31234/osf.io/dq6ky")  
 
 ),
 
@@ -292,7 +293,7 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
       tags$h6("The trajectories of the outcome variable correspond to the case which the largest sample size"),
       tags$h6("The plots show the simulated trajectory of the outcome variable for three different 
       participants: the participant in the 5% percentile, the participant in the 50% percentile and
-      the participant in the 75% percentile.")),
+      the participant in the 95% percentile.")),
 
       tabPanel("About the Method",
 
