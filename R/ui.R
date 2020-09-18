@@ -244,8 +244,12 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
     helpText("Note:",
              "To switch models and set new parameters click the Reset Page button."),
 
-    helpText("Contact: ginette.lafit@kuleuven.be")
-    helpText("Citation: Lafit, G., Adolf, J., Dejonckheere, E., Myin-Germeys, I., Viechtbauer, W., & Ceulemans, E. (2020, June 1). Selection of the Number of Participants in Intensive Longitudinal Studies: A User-friendly Shiny App and Tutorial to Perform Power Analysis in Multilevel Regression Models that Account for Temporal Dependencies. https://doi.org/10.31234/osf.io/dq6ky")  
+    helpText("Contact: ginette.lafit@kuleuven.be"),
+    helpText("Citation: Lafit, G., Adolf, J., Dejonckheere, E., 
+    Myin-Germeys, I., Viechtbauer, W., & Ceulemans, E. (2020, June 1). 
+    Selection of the Number of Participants in Intensive Longitudinal Studies:
+    A User-friendly Shiny App and Tutorial to Perform Power Analysis in Multilevel
+    Regression Models that Account for Temporal Dependencies. https://doi.org/10.31234/osf.io/dq6ky")  
 
 ),
 
