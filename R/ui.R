@@ -258,7 +258,7 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
     tabsetPanel(
         
       tabPanel("Population Models",
-      uiOutput("img")
+      htmlOutput("img")
       ),   
 
       tabPanel("Power Analysis", 
