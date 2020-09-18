@@ -1103,10 +1103,15 @@ server <- shinyServer(function(input, output){
 
    })
   
-    output$img <- renderUI({
-      tags$img(src = "https://drive.google.com/file/d/17I4XAGNyF7QvlNx2gf0hFHTZfmOGPZjX/view?usp=sharing")
-  })
-
+ output$img =
+    renderText({
+      c(
+        '<img src="',
+        "https://drive.google.com/drive/folders/15OtYe11v37Nt7LjYBLabUNY0iYh1I_W7",
+        '">'
+      )
+    }) 
+  
     observeEvent(input$reset_button, {
       reset("side-panel")
     })
