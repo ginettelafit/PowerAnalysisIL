@@ -12,7 +12,7 @@ Users can download the app and run locally on their computer by executing the fo
 # Check if R packages are installed
 
 list.of.packages = c("htmltools","shiny","htmltools","shiny","DT","nlme","ggplot2","gridExtra",
-"data.table","plyr","dplyr","formattable","tidyr","MASS","shinyjs","compiler","future.apply")
+"data.table","plyr","dplyr","formattable","tidyr","MASS","shinyjs","compiler","future.apply","devtools")
 new.packages = list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
