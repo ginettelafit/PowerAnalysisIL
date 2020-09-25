@@ -237,10 +237,15 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
                   choices = c("Maximizing the log-likelihood"=1, 
                               "Maximizing the restricted log-likelihood"=2)),
 
+
+    actionButton(inputId = "input_action_time", label = "Estimate Computational Time"),
+
     actionButton(inputId = "input_action", label = "Compute Power"),
 
     actionButton("reset_button", "Reset Page"),
 
+    helpText("Step 1: Estimate Computational Time"),
+    helpText("Step 2: Compute Power"),
     helpText("Note:",
              "To switch models and set new parameters click the Reset Page button."),
 
@@ -259,7 +264,11 @@ condition = "input.Model == '9' || input.Model == '10' || input.Model == '11'",
         
       tabPanel("Power Analysis",
       tags$h4("Population Models"),
-      htmlOutput("img"),         
+      htmlOutput("img"), 
+      tags$h4("Estimated Computational Time"),
+      textOutput("TimeHat"),
+      tags$h4("Simulation Progress"),        
+      verbatimTextOutput("text"),
       tags$h4("Power Analysis"),
       plotOutput("powerplot",height = "1000px")), 
 
