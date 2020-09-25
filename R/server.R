@@ -16,11 +16,31 @@ library(future.apply)
 
 server <- shinyServer(function(input, output){
 
+
+  compTime = eventReactive(input$input_action_time, {
+    
+     withProgress(message = 'Estimating expected computational time',
+                   style = getShinyOption("progress.style",
+     default = "old"),{
+
+    time.sim(input$Model, input$N, input$N.0, input$N.1, input$T, 
+    input$b00, input$b01.Z, input$b01.W, input$b10, input$b11.Z, input$b11.W, 
+    input$sigma, input$rho, input$sigma.v0, input$sigma.v1,input$rho.v, 
+    input$mu.W, input$sigma.W, input$mu.X, input$mu.X0, input$mu.X1, input$sigma.X, 
+    input$sigma.X0, input$sigma.X1,
+    input$is.rho.zero,input$isW.center,input$isX.center,input$Ylag.center, 
+    input$alpha,input$R,input$Opt.Method)
+    })                 
+  })
+
   power.sim = eventReactive(input$input_action, {
 
-     withProgress(message = 'Running... (this may take a while)',
-                   detail = 'Go get a cup of tea...', style = getShinyOption("progress.style",
+     withProgress(message = 'Running... (check estimated computational time)',
+                   detail = 'Go get a cup of tea...',style = getShinyOption("progress.style",
      default = "old"),{
+                     
+     withCallingHandlers({
+     shinyjs::html("text", "")
 
     Sim.model.IL(input$Model, input$N, input$N.0, input$N.1, input$T, 
     input$b00, input$b01.Z, input$b01.W, input$b10, input$b11.Z, input$b11.W, 
@@ -28,14 +48,21 @@ server <- shinyServer(function(input, output){
     input$mu.W, input$sigma.W, input$mu.X, input$mu.X0, input$mu.X1, input$sigma.X, 
     input$sigma.X0, input$sigma.X1,
     input$is.rho.zero,input$isW.center,input$isX.center,input$Ylag.center, 
-    input$alpha,input$R,input$Opt.Method)
-
+    input$alpha,input$R,input$Opt.Method) 
+      },
+        message = function(m) {
+          shinyjs::html(id = "text", html = m$message, add = TRUE)
+      })
     })
   })
   
   observeEvent(input$reset_button, {
       shinyjs::reset("side-panel")
     })
+
+
+  output$TimeHat <- renderText({ compTime()$time.sim })
+
 
    output$powerplot <-renderPlot({
 
@@ -1117,4 +1144,3 @@ server <- shinyServer(function(input, output){
   
 
 })
-
