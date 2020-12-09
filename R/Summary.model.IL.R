@@ -23,7 +23,7 @@ cmp.Fit.model.IL = cmpfun(Fit.model.IL)
 
 if (Model == 1){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -122,7 +122,7 @@ list(sigma.v0.sim,sigma.v0.mean,sigma.v0.se,sigma.v0.bias))
 
 if (Model == 2){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -221,7 +221,7 @@ list(sigma.v0.sim,sigma.v0.mean,sigma.v0.se,sigma.v0.bias))
 
 if (Model == 3){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -335,7 +335,7 @@ list(rho.v.sim,rho.v.mean,rho.v.se,rho.v.bias))
 
 if (Model == 4){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -435,7 +435,7 @@ list(sigma.v0.sim,sigma.v0.mean,sigma.v0.se,sigma.v0.bias))
 
 if (Model == 5){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -578,7 +578,7 @@ list(rho.v.sim,rho.v.mean,rho.v.se,rho.v.bias))
 
 if (Model == 6){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -707,7 +707,7 @@ list(sigma.v0.sim,sigma.v0.mean,sigma.v0.se,sigma.v0.bias))
 
 if (Model == 7){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -850,7 +850,7 @@ list(rho.v.sim,rho.v.mean,rho.v.se,rho.v.bias))
 
 if (Model == 8){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -979,7 +979,7 @@ list(sigma.v0.sim,sigma.v0.mean,sigma.v0.se,sigma.v0.bias))
 
 if (Model == 9){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -1075,7 +1075,7 @@ list(rho.v.sim,rho.v.mean,rho.v.se,rho.v.bias))
 
 if (Model == 10){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
@@ -1198,7 +1198,7 @@ list(rho.v.sim,rho.v.mean,rho.v.se,rho.v.bias))
 
 if (Model == 11){
 
-plan(multiprocess)
+plan(multisession)
 fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
