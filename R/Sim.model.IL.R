@@ -245,7 +245,7 @@ message(paste('Estimating Power for N.0 =',N.0[i],'and N.1 =',N.1[i]))
 cmp.Summary.model.IL(Model, N, N.0[i], N.1[i], T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
@@ -426,7 +426,7 @@ message(paste('Estimating Power for N =',N[i]))
 cmp.Summary.model.IL(Model, N[i], N.0, N.1, T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
@@ -590,7 +590,7 @@ message(paste('Estimating Power for N =',N[i]))
 cmp.Summary.model.IL(Model, N[i], N.0, N.1, T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: random effects 
 
@@ -787,7 +787,7 @@ message(paste('Estimating Power for N =',N[i]))
 cmp.Summary.model.IL(Model, N[i], N.0, N.1, T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: random effects 
 
@@ -953,7 +953,7 @@ message(paste('Estimating Power for N.0 =',N.0[i],'and N.1 =',N.1[i]))
 cmp.Summary.model.IL(Model, N, N.0[i], N.1[i], T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
@@ -1188,7 +1188,7 @@ message(paste('Estimating Power for N.0 =',N.0[i],'and N.1 =',N.1[i]))
 cmp.Summary.model.IL(Model, N, N.0[i], N.1[i], T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
@@ -1391,7 +1391,7 @@ message(paste('Estimating Power for N =',N[i]))
 cmp.Summary.model.IL(Model, N[i], N.0, N.1, T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
@@ -1609,7 +1609,7 @@ message(paste('Estimating Power for N =',N[i]))
 cmp.Summary.model.IL(Model, N[i], N.0, N.1, T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
@@ -1795,7 +1795,7 @@ message(paste('Estimating Power for N =',N[i]))
 cmp.Summary.model.IL(Model, N[i], N.0, N.1, T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: random effects 
 
@@ -1929,7 +1929,7 @@ message(paste('Estimating Power for N.0 =',N.0[i],'and N.1 =',N.1[i]))
 cmp.Summary.model.IL(Model, N, N.0[i], N.1[i], T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
@@ -2100,7 +2100,7 @@ message(paste('Estimating Power for N =',N[i]))
 cmp.Summary.model.IL(Model, N[i], N.0, N.1, T, 
 isX.center, Ylag.center, isW.center, alpha, 
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)})
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,R,Opt.Method,is.rho.zero)},future.seed = 0xBEEF)
 
 # Distribution of the parameters: fixed effects 
 
