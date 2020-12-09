@@ -28,7 +28,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -127,7 +127,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -226,7 +226,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -340,7 +340,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -440,7 +440,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -583,7 +583,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -712,7 +712,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -855,7 +855,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -984,7 +984,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -1080,7 +1080,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
@@ -1203,7 +1203,7 @@ fit = future_lapply(1:R, function(r)
 cmp.Fit.model.IL(Model, N, N.0, N.1, T, 
 isX.center, Ylag.center, isW.center,
 b00, b01.Z, b01.W, b10, b11.Z, b11.W, sigma, rho, sigma.v0, sigma.v1,rho.v, 
-mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero))
+mu.W, sigma.W, mu.X, mu.X0, mu.X1, sigma.X, sigma.X0, sigma.X1,Opt.Method,is.rho.zero),future.seed = 0xBEEF)
 
 errors = rep(0,R)
 for (r in 1:R){errors[r] = length(fit[[r]])}
