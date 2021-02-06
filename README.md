@@ -2,7 +2,7 @@
 
 The repository contains functions used in the following [paper](https://psyarxiv.com/dq6ky/):
 
-Lafit, G., Adolf, J., Dejonckheere, E., Myin-Germeys, I., Viechtbauer, W., & Ceulemans, E. (2020, June 1). Selection of the Number of Participants in Intensive Longitudinal Studies: A User-friendly Shiny App and Tutorial to Perform Power Analysis. 
+Lafit, Ginette, Janne Adolf, Egon Dejonckheere, Inez Myin-Germeys, Wolfgang Viechtbauer, and Eva Ceulemans. (in press). “Selection of the Number of Participants in Intensive Longitudinal Studies: A User-Friendly Shiny App and Tutorial for Performing Power Analysis in Multilevel Regression Models That Account for Temporal Dependencies.” Advances in Methods and Practices in Psychological Science.
 
 ## Shiny app and R package to perform power analysis to select the number of participants in intensive longitudinal studies
 
