@@ -88,7 +88,7 @@ Sim.AR.Model.Group.Diff = function(N.0, N.1,T.obs,Ylag.center,
   Ylag = rep(0,nrow(data.Y))
   n.subject = unique(data.Y$subjno)
   for (j in n.subject){
-    Ylag[which(data.Y$subjno==j)] = shift(data.Y$Y[which(data.Y$subjno==j)])
+    Ylag[which(data.Y$subjno==j)] = data.table::shift(data.Y$Y[which(data.Y$subjno==j)])
   }
   
   data = cbind(data.Y,Ylag=Ylag)
