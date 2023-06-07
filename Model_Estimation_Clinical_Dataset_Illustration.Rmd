@@ -208,7 +208,7 @@ n.i = which(data$PID==i)
 Day.i = data$day[n.i]
 for (t in unique(Day.i)){
 k.i = n.i[which(data$day[n.i]==t)]
-NA.lag[k.i] = shift(data$NA.[k.i],1)
+NA.lag[k.i] = data.table::shift(data$NA.[k.i],1)
 }}
 
 data = cbind(data,NA.lag)
